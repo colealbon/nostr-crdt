@@ -39,10 +39,10 @@ export async function createNostrCRDTRoom(
 
   console.log("create room", event.id);
   const pub = client.publish(event); //, relays);
-  pub.on("ok", () => {
+  client.on("ok", () => {
     console.log("ok");
   });
-  pub.on("failed", () => {
+  client.on("failed", () => {
     console.warn("failed");
   });
 
